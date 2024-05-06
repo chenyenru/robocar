@@ -20,9 +20,9 @@
 # MAX_LOOPS = None        # the vehicle loop can abort after this many iterations, when given a positive integer.
 # 
 # #CAMERA
-# CAMERA_TYPE = "OAK"   # (PICAM|WEBCAM|CVCAM|CSIC|V4L|D435|MOCK|IMAGE_LIST)
-# IMAGE_W = 160
-# IMAGE_H = 120
+CAMERA_TYPE = "OAK"   # (PICAM|WEBCAM|CVCAM|CSIC|V4L|D435|MOCK|IMAGE_LIST)
+IMAGE_W = 1280
+IMAGE_H = 800
 IMAGE_DEPTH = 3         # default RGB=3, make 1 for mono
 # CAMERA_FRAMERATE = DRIVE_LOOP_HZ
 # CAMERA_VFLIP = False
@@ -35,7 +35,7 @@ IMAGE_DEPTH = 3         # default RGB=3, make 1 for mono
 # 
 # # OAK-D-LITE: "1080p" for rgb
 # # OAK-D-WIDE: "800p" for rgb
-RGB_RESOLUTION = "1080p" 
+RGB_RESOLUTION = "800p" 
 # 
 # RGB_APPLY_CROPPING = True
 # RGB_SENSOR_CROP_X = 0.0
@@ -47,7 +47,7 @@ RGB_RESOLUTION = "1080p"
 # RGB_SENSOR_ISO = 400
 # RGB_WB_MANUAL = 2800
 # 
-OAK_D_ISP_SCALE = (1,4)
+OAK_D_ISP_SCALE = (1,1)
 OAK_ENABLE_DEPTH_MAP = True # enables depth map output
 OAK_OBSTACLE_DETECTION_ENABLED = False # enable roi distances output
 # 
@@ -714,15 +714,9 @@ JOYSTICK_DEVICE_FILE = "/dev/input/js0" # this is the unix file use to access th
 # #This enables that, and sets the path to the simualator and the environment.
 # #You will want to download the simulator binary from: https://github.com/tawnkramer/donkey_gym/releases/download/v18.9/DonkeySimLinux.zip
 # #then extract that and modify DONKEY_SIM_PATH.
-DONKEY_GYM = True
-DONKEY_SIM_PATH = "/home/chenyenru/Documents/RoboCar/DonkeySimLinux/donkey_sim.x86_64" #"/home/tkramer/projects/sdsandbox/sdsim/build/DonkeySimLinux/donkey_sim.x86_64" when racing on virtual-race-league use "remote", or user "remote" when you want to start the sim manually first.
-DONKEY_GYM_ENV_NAME = "donkey-generated-track-v0" # ("donkey-generated-track-v0"|"donkey-generated-roads-v0"|"donkey-warehouse-v0"|"donkey-avc-sparkfun-v0")
-GYM_CONF = {
-    "car_config"  : {"body_style" : "car01", "body_rgb" : [128, 0, 128], "car_name" : "hello", "font_size" : 40},  
-    "cam_config"  : {"img_enc" : "PNG","offset_x" : "0.0","offset_y" : "3.0","offset_z" : "3.0","rot_x" : "50.0"},
-    "cam_config_b": {"img_enc" : "PNG","offset_x" : "0.0","offset_y" : "0.0","offset_z" : "1.0","rot_x" : "0.0"},
-    # "lidar_config": {"degPerSweepInc" : "2.0", "degAngDown" : "4.0", "degAngDelta" : "1.0", "numSweepsLevels" : "3", "maxRange" : "50.0", "noise" : "0.4", "offset_x" : "0.0", "offset_y" : "0.5", "offset_z" : "0.5", "rot_x" : "0.0" }
-    }
+# DONKEY_GYM = False
+# DONKEY_SIM_PATH = "path to sim" #"/home/tkramer/projects/sdsandbox/sdsim/build/DonkeySimLinux/donkey_sim.x86_64" when racing on virtual-race-league use "remote", or user "remote" when you want to start the sim manually first.
+# DONKEY_GYM_ENV_NAME = "donkey-generated-track-v0" # ("donkey-generated-track-v0"|"donkey-generated-roads-v0"|"donkey-warehouse-v0"|"donkey-avc-sparkfun-v0")
 # GYM_CONF = { "body_style" : "donkey", "body_rgb" : (128, 128, 128), "car_name" : "car", "font_size" : 100} # body style(donkey|bare|car01) body rgb 0-255
 # GYM_CONF["racer_name"] = "Your Name"
 # GYM_CONF["country"] = "Place"
